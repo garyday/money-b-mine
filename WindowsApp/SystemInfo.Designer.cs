@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.updateCounter = new System.Windows.Forms.Timer(this.components);
             this.txtHDD = new System.Windows.Forms.TextBox();
             this.txtCPU = new System.Windows.Forms.TextBox();
             this.txtRAM = new System.Windows.Forms.TextBox();
@@ -75,6 +75,12 @@
             this.label3.Size = new System.Drawing.Size(204, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Current RAM Usage";
+            // 
+            // updateCounter
+            // 
+            this.updateCounter.Enabled = true;
+            this.updateCounter.Interval = 250;
+            this.updateCounter.Tick += new System.EventHandler(this.UpdateCounter_Tick);
             // 
             // txtHDD
             // 
@@ -122,7 +128,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer updateCounter;
         private System.Windows.Forms.TextBox txtHDD;
         private System.Windows.Forms.TextBox txtCPU;
         private System.Windows.Forms.TextBox txtRAM;
